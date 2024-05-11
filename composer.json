@@ -1,0 +1,19 @@
+{
+    "name": "slims/object-storage",
+    "type": "senayan-plugin",
+    "require": {
+        "aws/aws-sdk-php": "^3.306"
+    },
+    "license": "GPL-3.0",
+    "autoload": {
+        "psr-4": {
+            "SLiMS\\ObjectStorage\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Drajat Hasan"
+        }
+    ],
+    "minimum-stability": "stable"
+}
