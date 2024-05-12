@@ -1,5 +1,5 @@
 # SLiMS Object Storage
-Merupakan sub-pustaka dari ```SLiMS\Filesystems``` yang digunakan untuk menyimpan file-file yang diunggah ke SLiMS di sebuah storage server yang menerapkan arsitektur [object-storage](https://cloudmatika.co.id/blog-detail/object-storage) dan protokol [S3](https://idcloudhost.com/blog/mengenal-protokol-object-storage-s3/).
+Merupakan sub-pustaka dari ```SLiMS\Filesystems``` dalam bentuk [plugins](https://slims.web.id/docs/development-guide/Plugin/Intro/) yang digunakan untuk menyimpan file-file yang diunggah ke SLiMS di sebuah storage server yang menerapkan arsitektur [object-storage](https://cloudmatika.co.id/blog-detail/object-storage) dan protokol [S3](https://idcloudhost.com/blog/mengenal-protokol-object-storage-s3/).
 
 ## Peringatan
 Saat ini hanya mendukung SLiMS di cabang ```develop``` bagi anda yang masih menggunakan SLiMS versi 9.6.1 segara upgrade ke versi ```develop``` (Segala risiko ditanggung sendiri).
