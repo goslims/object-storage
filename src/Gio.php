@@ -40,11 +40,11 @@ class Gio extends Contract
     {
         try {
             // create new random file name
-            $this->uploadedFile = md5(date('this') . utility::createRandomString(64)) . $this->getExt($fileToUpload);
+            $this->uploadedFile = $_FILES[$fileToUpload]['name'];
 
             // Write file 
             // dd($this->uploadedFile);
-            $this->filesystem->writeStream('/' . $_FILES[$fileToUpload]['name'], $_FILES[$fileToUpload]['tmp_name']);
+            $this->filesystem->write($_FILES[$fileToUpload]['name'], $this->streamContent($_FILES[$fileToUpload]['tmp_name']));
 
             // Make a validation
             $validation($this);
@@ -59,6 +59,27 @@ class Gio extends Contract
         return $this;
     }
 
+    private function streamContent($path)
+    {
+        ob_start();
+        // Open the file in binary mode
+        $fp = fopen($path, 'rb');
+
+        // Output the file
+        while (!feof($fp)) {
+            // Read and output a chunk of the file
+            echo fread($fp, 8192);
+
+            // Flush the output buffer to free up memory
+            // ob_flush();
+            // flush();
+        }
+
+        // Close the file
+        fclose($fp);
+        return ob_get_clean();
+    }
+
     /**
      * Rename uploaded file with new name
      *
@@ -67,10 +88,10 @@ class Gio extends Contract
      */
     public function as(string $newName)
     {
-        if ($this->uploadStatus)
+        if ($this->uploadStatus && $this->isExists($originalName = $this->uploadedFile))
         {
-            $this->filesystem->move($this->uploadedFile, $newName . $this->getExt($this->uploadedFile));
-            $this->uploadedFile = $newName . $this->getExt($this->uploadedFile);
+            $this->move($originalName, ($newName = $newName . $this->getExt($this->uploadedFile)));
+            $this->uploadedFile = $newName;
         }
         
         return $this;

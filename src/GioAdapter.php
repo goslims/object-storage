@@ -238,10 +238,10 @@ class GioAdapter implements FilesystemAdapter
      */
     public function copy(string $source, string $destination, Config $config): void
     {
-        // $this->client->copyObject([
-        //     'Bucket' => $this->config->bucket,
-        //     'CopySource' => $this->config->bucket. '/' . $source, 
-        //     'Key' => $destination
-        // ]);
+        $this->client->copyObject([
+            'Bucket' => $this->config->bucket,
+            'Key' => urlencode($destination),
+            'CopySource' => $this->config->bucket . '/' . urlencode($source)
+        ]);
     }
 }

@@ -41,7 +41,6 @@ class GioObjectAttribute
     public function getMimeType()
     {
         $detail = $this->getDetail();
-        dd($detail);
         return (string)$detail->get('ContentType');
     }
 
