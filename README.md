@@ -17,7 +17,7 @@ cd slims-object-storage
 composer install
 mkdir config/
 ```
-Membuat konfigurasi diska anda pada direktori ```config``` yang telah dibuat sebelumnya.
+Nyalakan plugin ini pada modul sistem pada sub menu plugin, cari dengan kata kunci ```storage```. Membuat konfigurasi diska anda pada direktori ```config``` yang telah dibuat sebelumnya.
 ```bash
 nano config/disks.php
 ```
