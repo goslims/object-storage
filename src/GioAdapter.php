@@ -228,7 +228,14 @@ class GioAdapter implements FilesystemAdapter
      */
     public function move(string $source, string $destination, Config $config): void
     {
-        $this->copy($source, $destination, $config);
+        // Renaming data
+        if (!$this->fileExists($destination)) {
+            $this->write($destination, $this->read($source), $config);
+        } else {
+            // overwrite existing data
+            $this->copy($source, $destination, $config);
+        }
+
         $this->delete($source);
     }
 
