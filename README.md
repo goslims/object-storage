@@ -10,6 +10,11 @@ Secara bawaan *adapter* untuk berkomunikasi dengan *storage server* sebagai beri
 ### Detail penjelasan
 #### Biznet Gio Object Storage
 Pada layanan ini anda dapat menggunakan sub-pustaka ini dengan kloning repo ini pada folder plugin:
+##### via composer
+```bash
+composer require slimis/object-storage
+```
+##### via cloning
 ```bash
 cd plugins/
 git clone https://github.com/drajathasan/slims-object-storage
