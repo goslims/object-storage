@@ -17,7 +17,7 @@ composer require slims/object-storage
 ##### via cloning
 ```bash
 cd plugins/
-git clone https://github.com/drajathasan/slims-object-storage
+git clone https://github.com/goslims/object-storage
 cd slims-object-storage
 composer install
 mkdir config/
