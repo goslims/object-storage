@@ -12,7 +12,7 @@ Secara bawaan *adapter* untuk berkomunikasi dengan *storage server* sebagai beri
 Pada layanan ini anda dapat menggunakan sub-pustaka ini dengan kloning repo ini pada folder plugin:
 ##### via composer
 ```bash
-composer require slimis/object-storage
+composer require slims/object-storage
 ```
 ##### via cloning
 ```bash
